@@ -74,10 +74,10 @@ for epoch in range(100):
         sess.run(train, feed_dict={x: batch_xsTrain, y_: batch_ysTrain})
 
     print("....................Training....................")
-    print ("Epoch #:", epoch, "Error on train: ", sess.run(loss, feed_dict={x: batch_xsTrain, y_: batch_ysTrain}))
+    print ("Epoch #:", epoch, "Loss on train: ", sess.run(loss, feed_dict={x: batch_xsTrain, y_: batch_ysTrain}))
 
     print("....................Validation....................")
-    print("Epoch #:", epoch, "Error on validation: ", sess.run(loss, feed_dict={x: x_dataVal, y_: y_dataVal}))
+    print("Epoch #:", epoch, "Loss on validation: ", sess.run(loss, feed_dict={x: x_dataVal, y_: y_dataVal}))
     resultVal = sess.run(y, feed_dict={x: x_dataVal})
     for b, r in zip(y_dataVal, resultVal):
         print( b, "-->", r)
